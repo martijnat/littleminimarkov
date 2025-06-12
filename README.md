@@ -22,7 +22,7 @@ make
 To run the model:
 
 ```bash
-./generate model.q2.bin
+./minimarkov model.q2.bin
 ```
 
 # Training set

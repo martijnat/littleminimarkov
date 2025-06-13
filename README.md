@@ -1,10 +1,12 @@
-# tinymarkov
+# Little Mini Markov (LLM)
 
-Simple tiny markov chain implementation to generate text. It will
-train on plaintext ascii input to learn to predict the next character.
+Simple tiny markov chain implementation to generate text. I wanted to see how simple I could make it with half coherent ouput.
+
+It will train on plaintext ascii input to learn to predict the next character.
 For each 3 character input, it will generate a 4th input and then
-continue from there. The output isn't that coherent but it was a test
-to see how simple I could make this.
+continue from there.
+
+It learns by reading every 4 bytes of data and recording how often it sees it. It will then compress the data to 2 bit precision, scaled by each 3 byte prefix. When generating it will use the relative probability of each 4th byte to randomly generate each succesive byte.
 
 # sample output
 

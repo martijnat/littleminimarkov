@@ -1,14 +1,14 @@
-all: minimarkov do_training
+all: micromarkov do_training
 
 clean:
-	-rm minimarkov
+	-rm micromarkov
 	-rm model.q2.bin
 
-minimarkov: minimarkov.c
-	gcc minimarkov.c -Werror -Wunused -o minimarkov
+micromarkov: micromarkov.c
+	gcc micromarkov.c -Werror -Wunused -o micromarkov
 
 do_training:
 	cat data/pg*.txt > training_data.txt
-	./minimarkov training_data.txt model.q2.bin
+	./micromarkov training_data.txt model.q2.bin
 	rm training_data.txt
-	./minimarkov model.q2.bin | head -n 8
+	./micromarkov model.q2.bin | head -n 1 | head -c 1024
